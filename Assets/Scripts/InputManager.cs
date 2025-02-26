@@ -4,8 +4,9 @@ using UnityEngine.Events;
 public class InputManager : MonoBehaviour
 {
     public UnityEvent OnSpacePressed = new();
-    public UnityEvent OnShiftPressed = new();
+    public UnityEvent<Vector2> OnShiftPressed = new();
     public UnityEvent<Vector2> OnMove = new();
+    public UnityEvent<Vector2> OnMouseMove = new();
     //public UnityEvent OnResetPressed = new UnityEvent();
 
     void Update()
@@ -36,12 +37,12 @@ public class InputManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            OnShiftPressed?.Invoke();
+            OnShiftPressed?.Invoke(input);
         }
 
-        //if (Input.GetKeyDown(KeyCode.R))
-        //{
-        //    OnResetPressed?.Invoke();
-        //}       
+        float horizontalLook = Input.GetAxis("Mouse X");
+        float verticalLook = Input.GetAxis("Mouse Y");
+
+        OnMouseMove?.Invoke(new Vector2(horizontalLook, verticalLook));  
     }
 }
