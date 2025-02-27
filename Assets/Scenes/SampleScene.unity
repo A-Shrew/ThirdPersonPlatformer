@@ -1327,6 +1327,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 369837139112549392, guid: d5163ff4720ef7146b47faa37dd84b51, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 1865038214238135252, guid: d5163ff4720ef7146b47faa37dd84b51, type: 3}
       propertyPath: dash
       value: 12
@@ -1439,6 +1443,14 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: 3a4eb255a35488e4e90174d4622fdc26, type: 2}
+    - target: {fileID: 2645033591995049965, guid: 72c49aad2b3a0774da21934ef0a2a526, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4308688271060974694, guid: 72c49aad2b3a0774da21934ef0a2a526, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.12
+      objectReference: {fileID: 0}
     - target: {fileID: 4547249613119680234, guid: 72c49aad2b3a0774da21934ef0a2a526, type: 3}
       propertyPath: m_TagString
       value: Ground
@@ -1508,6 +1520,7 @@ PrefabInstance:
     - {fileID: 8500662609842623067, guid: 72c49aad2b3a0774da21934ef0a2a526, type: 3}
     - {fileID: 8418848793420256927, guid: 72c49aad2b3a0774da21934ef0a2a526, type: 3}
     - {fileID: 4189130390142196063, guid: 72c49aad2b3a0774da21934ef0a2a526, type: 3}
+    - {fileID: 6914658206865362342, guid: 72c49aad2b3a0774da21934ef0a2a526, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4851996913007986566, guid: 72c49aad2b3a0774da21934ef0a2a526, type: 3}
       insertIndex: -1
