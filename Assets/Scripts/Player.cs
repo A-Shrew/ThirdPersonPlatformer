@@ -9,13 +9,15 @@ public class Player : MonoBehaviour
     [SerializeField] private new CinemachineCamera camera;
     [SerializeField] private TextMeshProUGUI dashText;
     [SerializeField] private float speed;
-    [SerializeField] private float jump;
+    [SerializeField] private float jumpPower;
+    [SerializeField] private int jumps;
     [SerializeField] private float dash;
     [SerializeField] private float dashCooldown;
     [SerializeField] private float airDrag;
 
     private Rigidbody rb;
     private bool isGrounded;
+    private int remJumps;
     private bool canDash;
     private string dashString;
 
@@ -47,14 +49,16 @@ public class Player : MonoBehaviour
     private void Move(Vector2 direction)
     {
         Vector3 moveDirection = transform.rotation * new Vector3(direction.x, 0f, direction.y);
-        rb.AddForce(speed * moveDirection);
+        rb.AddForce(speed * moveDirection,ForceMode.Acceleration);
     }
 
     private void Jump()
     {
-        if (isGrounded)
+        if (isGrounded || remJumps>0)
         {
-            rb.AddForce(jump * Vector3.up, ForceMode.Impulse);
+            rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
+            rb.AddForce(jumpPower * Vector3.up, ForceMode.VelocityChange);
+            remJumps--;
         }
     }
     private void Dash(Vector2 direction)
@@ -73,6 +77,7 @@ public class Player : MonoBehaviour
         if (col.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
+            remJumps = jumps;
         }
     }
     private void OnCollisionExit(Collision col)
