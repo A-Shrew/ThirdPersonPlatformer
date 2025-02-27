@@ -1,9 +1,13 @@
 using System.Collections;
+using TMPro;
+using Unity.Cinemachine;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
     [SerializeField] private InputManager inputManager;
+    [SerializeField] private new CinemachineCamera camera;
+    [SerializeField] private TextMeshProUGUI dashText;
     [SerializeField] private float speed;
     [SerializeField] private float jump;
     [SerializeField] private float dash;
@@ -13,6 +17,7 @@ public class Player : MonoBehaviour
     private Rigidbody rb;
     private bool isGrounded;
     private bool canDash;
+    private string dashString;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -21,10 +26,13 @@ public class Player : MonoBehaviour
         isGrounded = true;
         canDash = true;
         inputManager.OnMove.AddListener(Move);
-        inputManager.OnMouseMove.AddListener(Look);
         inputManager.OnSpacePressed.AddListener(Jump);
         inputManager.OnShiftPressed.AddListener(Dash);
+    }
 
+    private void Update()
+    {
+        dashText.text = $"Dash Cooldown: {dashString}";
     }
 
     // Update is called once per frame
@@ -32,14 +40,14 @@ public class Player : MonoBehaviour
     {
         // Apply Drag
         rb.linearVelocity = new Vector3(rb.linearVelocity.x / (1 + airDrag), rb.linearVelocity.y,rb.linearVelocity.z / (1 + airDrag));
+        transform.rotation = Quaternion.Euler(transform.rotation.x, camera.transform.rotation.eulerAngles.y, transform.rotation.z);
     }
 
 
     private void Move(Vector2 direction)
     {
-        Vector3 moveDirection = rb.rotation * new Vector3(direction.x, 0f, direction.y);
+        Vector3 moveDirection = transform.rotation * new Vector3(direction.x, 0f, direction.y);
         rb.AddForce(speed * moveDirection);
-
     }
 
     private void Jump()
@@ -58,12 +66,6 @@ public class Player : MonoBehaviour
             rb.AddForce(dash / 10 * Vector3.up, ForceMode.Impulse);
             StartCoroutine(DashCooldown());
         }
-
-    }
-
-    private void Look(Vector2 direction)
-    {
-        transform.Rotate(0f, direction.x, 0f);
     }
 
     private void OnCollisionEnter(Collision col)
@@ -84,9 +86,11 @@ public class Player : MonoBehaviour
     public IEnumerator DashCooldown()
     {
         canDash = false;
+        dashString = "Cooldown";
 
         yield return new WaitForSeconds(dashCooldown);
 
         canDash = true;
+        dashString = "Ready";
     }
 }
