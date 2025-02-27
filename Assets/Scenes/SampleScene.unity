@@ -1307,6 +1307,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -4770857017290435726, guid: d5163ff4720ef7146b47faa37dd84b51, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 31251327899965574, guid: d5163ff4720ef7146b47faa37dd84b51, type: 3}
       propertyPath: OnMouseMove.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -1325,23 +1329,47 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1865038214238135252, guid: d5163ff4720ef7146b47faa37dd84b51, type: 3}
       propertyPath: dash
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1865038214238135252, guid: d5163ff4720ef7146b47faa37dd84b51, type: 3}
+      propertyPath: jump
       value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 1865038214238135252, guid: d5163ff4720ef7146b47faa37dd84b51, type: 3}
+      propertyPath: jumps
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1865038214238135252, guid: d5163ff4720ef7146b47faa37dd84b51, type: 3}
       propertyPath: speed
-      value: 30
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1865038214238135252, guid: d5163ff4720ef7146b47faa37dd84b51, type: 3}
       propertyPath: camera
       value: 
       objectReference: {fileID: 1815159956}
     - target: {fileID: 1865038214238135252, guid: d5163ff4720ef7146b47faa37dd84b51, type: 3}
+      propertyPath: airDrag
+      value: 0.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 1865038214238135252, guid: d5163ff4720ef7146b47faa37dd84b51, type: 3}
       propertyPath: dashText
       value: 
       objectReference: {fileID: 1080867955}
     - target: {fileID: 1865038214238135252, guid: d5163ff4720ef7146b47faa37dd84b51, type: 3}
+      propertyPath: jumpPower
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1865038214238135252, guid: d5163ff4720ef7146b47faa37dd84b51, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1865038214238135252, guid: d5163ff4720ef7146b47faa37dd84b51, type: 3}
+      propertyPath: dashCooldown
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1865038214238135252, guid: d5163ff4720ef7146b47faa37dd84b51, type: 3}
+      propertyPath: gravityMultiplier
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 6233859487719326942, guid: d5163ff4720ef7146b47faa37dd84b51, type: 3}
       propertyPath: m_Material
