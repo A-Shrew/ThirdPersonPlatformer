@@ -4,10 +4,10 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI scoreText;
-
+    [SerializeField] private TextMeshProUGUI dashText;
 
     public static int gameScore;
-    public static float dashCooldown;
+    public static bool canDash;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -20,5 +20,14 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         scoreText.text = $"Score: {gameScore}";
+        if(canDash)
+        {
+            dashText.text = $"Dash Cooldown: {"Ready"}";
+        }
+        else
+        {
+            dashText.text = $"Dash Cooldown: {"Cooldown"}";
+        }
+   
     }
 }
