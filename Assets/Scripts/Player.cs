@@ -8,6 +8,8 @@ public class Player : MonoBehaviour
     [SerializeField] private InputManager inputManager;
     [SerializeField] private new CinemachineCamera camera;
     [SerializeField] private TextMeshProUGUI dashText;
+    [SerializeField] private ParticleSystem particles;
+    [SerializeField] private Transform feetPosition;
     [SerializeField] private float speed;
     [SerializeField] private float jumpPower;
     [SerializeField] private int jumps;
@@ -76,6 +78,7 @@ public class Player : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Ground"))
         {
+            Instantiate(particles,feetPosition.position,feetPosition.rotation);
             isGrounded = true;
             remJumps = jumps;
         }
