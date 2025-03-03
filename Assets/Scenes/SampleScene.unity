@@ -1235,7 +1235,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1865038214238135252, guid: d5163ff4720ef7146b47faa37dd84b51, type: 3}
       propertyPath: dash
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 1865038214238135252, guid: d5163ff4720ef7146b47faa37dd84b51, type: 3}
       propertyPath: jump
@@ -1247,7 +1247,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1865038214238135252, guid: d5163ff4720ef7146b47faa37dd84b51, type: 3}
       propertyPath: speed
-      value: 6.5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1865038214238135252, guid: d5163ff4720ef7146b47faa37dd84b51, type: 3}
       propertyPath: camera
@@ -1263,7 +1263,7 @@ PrefabInstance:
       objectReference: {fileID: 1080867955}
     - target: {fileID: 1865038214238135252, guid: d5163ff4720ef7146b47faa37dd84b51, type: 3}
       propertyPath: jumpPower
-      value: 5.5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1865038214238135252, guid: d5163ff4720ef7146b47faa37dd84b51, type: 3}
       propertyPath: m_Enabled
