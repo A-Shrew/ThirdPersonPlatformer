@@ -50,7 +50,7 @@ public class Player : MonoBehaviour
     private void Move(Vector2 direction)
     {
         Vector3 moveDirection = transform.rotation * new Vector3(direction.x, 0f, direction.y);
-        rb.AddForce(speed * moveDirection,ForceMode.Acceleration);
+        rb.AddForce(speed * moveDirection,ForceMode.Impulse);
     }
 
     private void Jump()
